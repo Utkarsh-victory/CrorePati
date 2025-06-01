@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register - Crorepati Quiz</title>
+  <link rel="stylesheet" href="register.css">
+  <style>
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="Signup-container">
+      <form onsubmit="register(event)">
+        <h1 class="Register">Register Now</h1>
+        <section class="input">
+          <input class="info" type="text" placeholder="Enter Your Name" id="username" required><br><br>
+          <input class="info" type="email" placeholder="Enter Email" id="email" required><br><br>
+          <input class="info" type="password" placeholder="Create Password" id="password" required><br><br>
+          <input class="info" type="password" placeholder="Confirm Password" id="confirmPassword" required><br><br>
+          <input type="checkbox" onclick="togglePasswordVisibility()"> Show Password<br><br>
+          <button class="button" type="submit">Register</button><br>
+          <h4 class="Customer">Already a Customer? 
+            <a href="login.html" style="color: #FFD700;">Login Now</a>
+          </h4>
+        </section>
+      </form>
+    </div>
+    <div class="img-container">
+      <img src="./images/kbclogo2-removebg-preview.png" class="washing-img" alt="KBC Logo">
+    </div>
+  </div>
+
+  <script>
+    function register(event) {
+      event.preventDefault(); // Prevent form from submitting normally
+
+      const username = document.getElementById('username').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+
+      if (!username || !email || !password || !confirmPassword) {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match!');
+        return;
+      }
+
+      if (localStorage.getItem(username)) {
+        alert('Username already exists! Please choose a different one.');
+        return;
+      }
+
+      const userData = {
+        email: email,
+        password: password
+      };
+
+      localStorage.setItem(username, JSON.stringify(userData));
+      alert('Registration successful! Redirecting to the Login page...');
+      window.location.href = 'login.html';
+    }
+
+    function togglePasswordVisibility() {
+      const fields = [document.getElementById("password"), document.getElementById("confirmPassword")];
+      fields.forEach(field => {
+        field.type = field.type === "password" ? "text" : "password";
+      });
+    }
+  </script>
+</body>
+</html>

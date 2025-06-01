@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - Crorepati Quiz Game</title>
+  <link rel="stylesheet" href="login.css">
+  <style>
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="Signup-container">
+      <form onsubmit="login(event)">
+        <h1 class="Register">Login Now</h1>
+        <section class="input">
+          <input id="login-username" class="info" type="text" placeholder="Enter Username" required><br><br>
+          <input id="login-password" class="info" type="password" placeholder="Password" required><br><br>
+           <input type="checkbox" onclick="togglepasswordVisibility()"> Show Password<br><br>
+          <button class="button" type="submit">Login</button><br>
+          <h4 class="Customer">Don't have an account? 
+            <a href="register.html" style="color: #FFD700;">Register Now</a>
+          </h4>
+        </section>
+      </form>
+    </div>
+    <div class="img-container">
+      <img src="./images/kbclogo2-removebg-preview.png" class="washing-img" alt="KBC Logo">
+    </div>
+  </div>
+
+  <script>
+    function login(event) {
+      event.preventDefault(); // Stop form from submitting normally
+
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value;
+      
+
+      const storedUser = localStorage.getItem(username);
+      if (storedUser) {
+        const userData = JSON.parse(storedUser);
+        if (userData.password === password) {
+          localStorage.setItem('currentUser', username);
+          alert('Login successful!');
+          window.location.href = 'crorepati-quiz.html'; // Redirect to quiz game
+        } else {
+          alert('Incorrect password.');
+        }
+      } else {
+        alert('Username not found.');
+      }
+    }
+
+        function togglepasswordVisibility() {
+      const fields = [document.getElementById("login-password")];
+      fields.forEach(field => {
+        field.type = field.type === "password" ? "text" : "password";
+      });
+    }
+  </script>
+</body>
+</html>

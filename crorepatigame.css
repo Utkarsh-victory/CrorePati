@@ -1,0 +1,309 @@
+  body {
+    font-family: Arial, sans-serif;
+    background: #291a40;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .image {
+    width: 400px;
+    height: 400px;
+    margin-top: 90px;
+    padding-left: 30px;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #33184b;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #FFD700;
+    position: relative;
+    margin-right: 400px;
+  }
+
+  .question {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .answers button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background: #004e92;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    width: 80%;
+    transition: background 0.3s;
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .answers button:hover {
+    background: #007fff;
+  }
+
+  .lifelines button {
+    margin: 5px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    background: #FFD700;
+    border: none;
+    color: black;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .status {
+    margin-top: 20px;
+    font-size: 1.2rem;
+  }
+
+  .timer {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #FFD700;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 73px;
+    right: -300px;
+    /* Hidden by default */
+    width: 250px;
+    height: 65%;
+    background: #1a1a40;
+    box-shadow: -4px 0 10px rgba(255, 215, 0, 0.4);
+    padding: 20px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  .sidebar.open {
+    right: 0;
+    /* Slide into view */
+  }
+
+  .prize {
+    padding: 8px;
+    margin: 6px 0;
+    border-radius: 6px;
+    color: #fff;
+    background: #333;
+    text-align: center;
+    font-size: 1rem;
+    transition: background 0.3s;
+  }
+
+  .active-prize {
+    background: #FFD700;
+    color: #000;
+    font-weight: bold;
+  }
+
+
+  .slidebar {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: #FFD700;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .lifelines button {
+    font-weight: bold;
+    padding: 8px 12px;
+    margin: 4px;
+    cursor: pointer;
+  }
+
+
+
+  /* Small devices: smartphones (up to 480px) */
+  @media (max-width: 480px) {
+    body {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+    }
+
+    .image {
+      width: 35%;
+      height: auto;
+      margin: -2rem 0;
+      padding-left: 37px;
+      padding-bottom: 16px;
+      margin-top: -11px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 95vw;     
+      margin: 6px auto;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    .question,
+    .timer {
+      font-size: 1.1rem;
+      text-align: center;
+    }
+
+    .answers button {
+      width: 100%;
+      font-size: 1rem;
+      padding: 12px;
+    }
+
+    .lifelines {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .lifelines button {
+      width: 90%;
+      font-size: 1rem;
+    }
+
+    .sidebar {
+      position: fixed;
+      top: 73px;
+      right: -300px;
+      /* Hidden by default */
+      width: 250px;
+      height: 72%;
+      background: #1a1a40;
+      box-shadow: -4px 0 10px rgba(255, 215, 0, 0.4);
+      padding: 20px;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      transition: right 0.3s ease-in-out;
+      overflow-y: auto;
+      z-index: 999;
+    }
+
+    .prize {
+      flex: 1 1 48%;
+      margin:21px;
+      font-size: 0.85rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    .status {
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+
+  /* Medium devices: tablets (768px - 1024px) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    body {
+      flex-direction: column;
+      align-items: center;
+      padding: 1.5rem;
+    }
+
+    .image {
+      width: 70%;
+      height: auto;
+      margin: 2rem 0 1rem;
+    }
+
+    .container {
+      width: 90%;
+      padding: 2rem;
+      margin: 1rem auto;
+    }
+
+    .answers button {
+      width: 90%;
+      font-size: 1.1rem;
+      padding: 14px;
+    }
+
+    .lifelines {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .lifelines button {
+      font-size: 1rem;
+      padding: 10px 20px;
+    }
+
+    .sidebar {
+ position: fixed;
+    top: 73px;
+    right: -300px;
+    /* Hidden by default */
+    width: 250px;
+    height: 72%;
+    background: #1a1a40;
+    box-shadow: -4px 0 10px rgba(255, 215, 0, 0.4);
+    padding: 20px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+    z-index: 999;
+    }
+
+    .prize {
+      flex: 1 1 30%;
+      margin: 12px;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .question,
+    .timer,
+    .status {
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+  }

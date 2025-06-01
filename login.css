@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #331b4f;
+  font-family: sans-serif;
+  overflow: hidden;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.Signup-container {
+  background-color: #331b4f;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #FFD700;
+  max-width: 450px;
+  width: 100%;
+  text-align: center;
+  margin: 1rem;
+}
+
+.img-container {
+  max-width: 450px;
+  width: 100%;
+  margin: 1rem;
+}
+
+.washing-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.Register {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.input {
+  color: white;
+}
+
+.info {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #1f4981;
+}
+
+.button {
+  width: 100%;
+  max-width: 400px;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: rgb(31, 73, 129);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  margin-top: 1rem;
+}
+
+.button:hover {
+  background-color: rgb(41, 86, 153);
+}
+
+.Customer {
+  margin-top: 1rem;
+  font-size: 1rem;
+}
+
+.Customer a {
+  color: #FFD700;
+  text-decoration: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .main-container {
+    /* flex-direction: column; */
+    /* align-items: center; */
+    padding-bottom: 10px;
+    
+  }
+
+  .img-container {
+    display: none;
+  }
+
+  .Signup-container {
+    width: 87%;
+    margin-top : 2px;
+  }
+
+  .button {
+    font-size: 1.1rem;
+    margin-left: 7px;
+  }
+
+  .Register {
+    font-size: 1.6rem;
+  }
+
+  .info {
+    font-size: 0.95rem;
+  }
+
+  .Customer {
+    font-size: 0.9rem;
+  }
+
+  .input {
+    width: 94%;
+  }
+}
+
+
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .Signup-container {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  .Register {
+    font-size: 1.4rem;
+  }
+
+  .button {
+    font-size: 1.1rem;
+    padding: 10px 0;
+  }
+
+  .info {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+
+  .Customer {
+    font-size: 0.9rem;
+  }
+} 
